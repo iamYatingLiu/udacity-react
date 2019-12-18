@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "exercise2",
+=======
+  "name": "author-likes-movie",
+>>>>>>> 76b6a901afec71b40f20501dec67766643d0a995
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,4 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 76b6a901afec71b40f20501dec67766643d0a995
