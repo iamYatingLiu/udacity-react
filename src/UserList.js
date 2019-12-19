@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 
 class UserList extends Component {
     render() {
-        const users = this.props.users;
+        const {users, usersWhoLikedMovie} = this.props;
 
-        if (!users || Object.keys(users).length === 0) {
+        if (!usersWhoLikedMovie || usersWhoLikedMovie.length === 0) {
             return <p>None of the current users liked this movie.</p>;
         }
-        else {
-            return (
-                <ul>
-                    {Object.keys(users).map((userid) => <li>{users[userid].name}</li>)}
-                </ul>
-            );
-        }
+        const listofItems = usersWhoLikedMovie.map(id => (
+            <li key={id}>
+                <p>{users[id].name}</p>
+            </li>
+        ))
+    return <ul>{listofItems}</ul>
     }
 }
 

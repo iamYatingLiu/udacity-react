@@ -7,7 +7,7 @@ class UserList extends Component {
     off of the pros passed into this presentational component. If you need a refresher on this syntax, check
     out this course: https://www.udacity.com/course/es6-javascript-improved--ud356
     */
-    const { users, usersWhoLikedMovie } = this.props;
+    const { usersWhoLikedMovie, users } = this.props;
 
     if (!usersWhoLikedMovie || usersWhoLikedMovie.length === 0) {
       return <p>None of the current users liked this movie.</p>;
