@@ -12,7 +12,6 @@ class Dashboard extends Component {
             {Object.keys(movieslist).map((movieid) => 
             {
               var usersID = profileslist.filter((profile) => profile.favoriteMovieID === movieid).map(profile => profile.userID);
-              //var usersID= profiles.map(profile => profile.userID);
               var users = Object.keys(userslist).reduce(function(r, e) {
                 if (usersID.includes(e)) r[e] = userslist[e]
                 return r;
