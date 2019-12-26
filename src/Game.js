@@ -6,7 +6,6 @@ class Game extends Component {
     constructor(props) {
         super(props);
         const valuesArray = this.makeNewQuestion();
-
         this.state = {
             value1 : valuesArray[0],
             value2 : valuesArray[1],
@@ -45,27 +44,25 @@ class Game extends Component {
     handleAnswer =
         event => {
         const newValuesArray = this.makeNewQuestion();
-        const givenAnswer = event.target.name;
         this.updateGame(newValuesArray);
-        const correct = this.isAnswerRight(givenAnswer);
+        const correct = this.evaluateAnswer(event.target.name);
         this.props.handleAnswer(correct);
     }
 
-    isAnswerRight(givenAnswer) {
+    evaluateAnswer(givenAnswer) {
         const { value1, value2, value3, proposedAnswer } = this.state;
         const corrAnswer = value1 + value2 + value3;
-        return ((givenAnswer === "true" && (proposedAnswer === corrAnswer)) ||
-            (givenAnswer === "false" && (proposedAnswer !== corrAnswer)));
+        return 
+        ((givenAnswer === "true" && (proposedAnswer === corrAnswer)) ||
+        (givenAnswer === "false" && (proposedAnswer !== corrAnswer)));
     }
 
 
 
 render() {
     const { value1, value2, value3, proposedAnswer } = this.state;
-
     return (
-        <div className="game">
-            <h2>Mental Math</h2>
+        <div>
             <div className="equation">
                 <p className="text">{`${value1} + ${value2} + ${value3} = ${proposedAnswer}`}</p>
             </div>

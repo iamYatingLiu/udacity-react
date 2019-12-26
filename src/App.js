@@ -4,34 +4,23 @@ import './App.css';
 import Score from './Score';
 import Game from './Game';
 
-
-/*const value1 = Math.floor(Math.random() * 100);
-const value2 = Math.floor(Math.random() * 100);
-const value3 = Math.floor(Math.random() * 100);
-const proposedAnswer = Math.floor(Math.random() * 3) + value1 + value2 + value3;
-*/
-
-
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      numQuestions: 0,
-      numCorrect: 0
-    };
-  }
+  state = {
+    correctAnswer: 0,
+    numQuestions: 0,
+  };
 
   handleAnswer = (isAnswerRight) => {
     if (isAnswerRight) {
       this.setState(previousState => ({
         numCorrect: (previousState.numCorrect + 1)
-      }))
+      }));
     }
       this.setState(previousState => ({
         numQuestions: previousState.numQuestions + 1,
-      }))
-  }
+      }));
+  };
 
 
 render() {
